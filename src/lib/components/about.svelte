@@ -13,21 +13,21 @@
     
     <div class="space-y-6 text-lg leading-relaxed">
       <p class="text-muted-foreground">
-        I'm a multi-disciplinary designer and developer who believes that great digital products come from understanding both the creative and technical sides of the web.
+        I’m a multi-disciplinary designer and developer who believes that the best results come from understanding every side of the creative and technical process.
       </p>
       
       <p class="text-muted-foreground">
-        With expertise spanning <span class="text-foreground font-medium">UI/UX design</span>, <span class="text-foreground font-medium">full-stack development</span>, and <span class="text-foreground font-medium">digital marketing</span>, I help businesses create cohesive digital experiences that not only look stunning but also perform exceptionally.
+        With expertise across brand design, web development, digital marketing, and print production, I help businesses create cohesive experiences that not only look striking but also work effectively in the real world.
       </p>
       
       <p class="text-muted-foreground">
-        Whether you need a complete brand identity, a high-converting website, or a comprehensive marketing strategy, I bring a holistic approach that ensures every element works together seamlessly.
+        From building a complete brand identity to developing high-performing websites, running campaigns that drive results, or delivering quality printed materials and clothing, I take a holistic approach that ensures every element connects seamlessly.
       </p>
     </div>
     
     <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
       <div class="text-center">
-        <div class="text-3xl font-bold text-primary mb-2">8+</div>
+        <div class="text-3xl font-bold text-primary mb-2">25+</div>
         <div class="text-sm text-muted-foreground">Years Experience</div>
       </div>
       <div class="text-center">
@@ -35,11 +35,7 @@
         <div class="text-sm text-muted-foreground">Projects Completed</div>
       </div>
       <div class="text-center">
-        <div class="text-3xl font-bold text-primary mb-2">50+</div>
-        <div class="text-sm text-muted-foreground">Happy Clients</div>
-      </div>
-      <div class="text-center">
-        <div class="text-3xl font-bold text-primary mb-2">3</div>
+        <div class="text-3xl font-bold text-primary mb-2">15</div>
         <div class="text-sm text-muted-foreground">Core Disciplines</div>
       </div>
     </div>
