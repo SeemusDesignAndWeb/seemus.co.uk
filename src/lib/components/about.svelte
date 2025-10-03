@@ -9,7 +9,7 @@
   <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 -z-10"></div>
   
   <div class="max-w-4xl mx-auto relative z-10">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">About Me</h2>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">About John Watson - Full-Stack Designer & Developer</h2>
     
     <div class="space-y-6 text-lg leading-relaxed">
       <p class="text-muted-foreground">

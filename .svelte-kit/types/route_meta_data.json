@@ -1,3 +1,6 @@
 {
-	"/": []
+	"/": [],
+	"/api/send-email": [
+		"src/routes/api/send-email/+server.js"
+	]
 }
