@@ -8,6 +8,23 @@ export default {
 		// Specific classes that might be missed
 		'bg-muted/30',
 		'bg-secondary/30',
+		// Gradient classes for testimonials
+		'bg-gradient-to-br',
+		'from-primary',
+		'to-secondary',
+		'from-secondary',
+		'to-primary',
+		'from-accent',
+		'to-accent',
+		// Carousel classes
+		'transform',
+		'hover:-translate-y-1',
+		'scale-125',
+		'hover:bg-primary/60',
+		'transition-transform',
+		'duration-500',
+		'ease-in-out',
+		'flex-shrink-0',
 	],
 
 	theme: {

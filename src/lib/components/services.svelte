@@ -1,6 +1,6 @@
 <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">Services</h2>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">Professional Digital Services</h2>
     <p class="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
       Comprehensive digital solutions tailored to your business needs
     </p>
@@ -23,7 +23,7 @@
         </div>
         <h3 class="text-xl font-semibold mb-3">Design</h3>
         <p class="text-muted-foreground mb-4 leading-relaxed">
-          Creating beautiful, intuitive interfaces that engage users and strengthen your brand identity.
+          Creating beautiful, intuitive design across UI, print, digital, and logos that engage users and strengthen your brand.
         </p>
         <ul class="space-y-2 text-sm text-muted-foreground">
           <li class="flex items-start gap-2">
@@ -83,7 +83,7 @@
             <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            React & SvelteKit
+            .NET Framework (C#), SvelteKit, more...
           </li>
           <li class="flex items-start gap-2">
             <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,7 +95,7 @@
             <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            Performance Optimization
+            Performance Optimisation
           </li>
         </ul>
       </div>
@@ -124,7 +124,7 @@
             <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            SEO Optimization
+            SEO Optimisation
           </li>
           <li class="flex items-start gap-2">
             <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,7 +142,7 @@
             <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            Conversion Optimization
+            Conversion Optimisation
           </li>
         </ul>
       </div>
@@ -163,7 +163,7 @@
         </div>
         <h3 class="text-xl font-semibold mb-3">Clothing Printing</h3>
         <p class="text-muted-foreground mb-4 leading-relaxed">
-          Custom apparel design and printing services to bring your brand to life on quality garments.
+          Custom apparel design, prototyping and printing services to bring your brand to life on quality garments.
         </p>
         <ul class="space-y-2 text-sm text-muted-foreground">
           <li class="flex items-start gap-2">
@@ -176,7 +176,7 @@
             <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            Screen Printing
+            Short or long runs
           </li>
           <li class="flex items-start gap-2">
             <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

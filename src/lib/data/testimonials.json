@@ -1,0 +1,40 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "quote": "Excellent and prompt service when I needed it. Fast turn-around at a very reasonable rate for the product provided. Lots of contact to make sure everything went to plan. Great service I would highly recommend.",
+      "name": "Sonny Angel",
+      "title": "Sonny's Landscape Group Ltd",
+      "initials": "SJ",
+      "rating": 5,
+      "gradient": "from-primary to-secondary"
+    },
+    {
+      "id": 2,
+      "quote": "Great service, material and quality printing, all our staff love the softness of the polo and looks really nice. We also have some other branded items and they look great. Highly recommend it!",
+      "name": "Milena Cruz",
+      "title": "El Recreo - Spanish School",
+      "initials": "MC",
+      "rating": 5,
+      "gradient": "from-secondary to-primary"
+    },
+    {
+      "id": 3,
+      "quote": "I have worked with John for almost 18 years, during which he typeset and published every issue of Criminal Law Week without fail. He built and continues to maintain our website, refreshed it multiple times in different languages, and ensured it worked seamlessly across devices.",
+      "name": "Deborah Colbran-Espada",
+      "title": "Thomson Reuters",
+      "initials": "DC",
+      "rating": 5,
+      "gradient": "from-primary to-secondary"
+    },
+    {
+        "id": 4,
+        "quote": "Seemus has been brilliant. They've produced a range of designs, working with our organisation branding to come up with some unique ideas that work perfectly for what we need. The quality of the finished product is excellent and we're really happy to recommend them as a great local business.",
+        "name": "Mark Cross",
+        "title": "River Church",
+        "initials": "RC",
+        "rating": 5,
+        "gradient": "from-primary to-secondary"
+      }
+  ]
+}
