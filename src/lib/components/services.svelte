@@ -1,8 +1,8 @@
 <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">Professional Digital Services</h2>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">Professional Digital and Print Services</h2>
     <p class="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
-      Comprehensive digital solutions tailored to your business needs
+      Comprehensive digital and print solutions tailored to your business needs
     </p>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
