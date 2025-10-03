@@ -9,7 +9,7 @@
   <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 -z-10"></div>
   
   <div class="max-w-4xl mx-auto relative z-10">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">About John Watson - Full-Stack Designer & Developer</h2>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">About John Watson - Designer & Developer</h2>
     
     <div class="space-y-6 text-lg leading-relaxed">
       <p class="text-muted-foreground">
@@ -25,7 +25,7 @@
       </p>
     </div>
     
-    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-6">
       <div class="text-center">
         <div class="text-3xl font-bold text-primary mb-2">25+</div>
         <div class="text-sm text-muted-foreground">Years Experience</div>

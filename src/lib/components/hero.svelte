@@ -5,7 +5,7 @@
   <!-- Light overlay to blend with brand colors -->
   <div class="absolute inset-0 bg-white/20 -z-10"></div>
   
-  <!-- Added colorful background gradient -->
+  <!-- Added colourful background gradient -->
   <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 -z-10"></div>
   
   <!-- Added decorative elements using CSS gradients -->
@@ -25,7 +25,7 @@
         Crafting Digital Experiences That <span class="text-primary">Convert</span>
       </h1>
       <p class="text-lg sm:text-xl text-foreground/90 max-w-2xl mx-auto text-balance leading-relaxed">
-        Full-stack designer and developer specializing in creating beautiful, functional websites and custom apparel that drive results for your business.
+        Full-stack designer and developer specialising in creating beautiful, functional websites, digital marketing, brand identity and custom apparel that drive results for your business.
       </p>
     </div>
     
@@ -38,7 +38,7 @@
       </a>
       <a 
         href="#contact" 
-        class="inline-flex items-center justify-center px-8 py-3 border border-border rounded-lg hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all font-medium"
+        class="inline-flex items-center justify-center px-8 py-3 bg-secondary text-secondary-foreground rounded-lg hover:opacity-90 transition-opacity font-medium"
       >
         Get In Touch
       </a>

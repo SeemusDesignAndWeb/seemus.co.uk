@@ -3,7 +3,7 @@ export const seoConfig = {
   site: {
     name: 'Seemus',
     url: 'https://seemus.co.uk',
-    description: 'Full-stack designer and developer specializing in web design, development, digital marketing, and custom apparel printing. 25+ years experience creating digital experiences that convert.',
+    description: 'Full-stack designer and developer specialising in web design, development, digital marketing, and custom apparel printing. 25+ years experience creating digital experiences that convert.',
     keywords: [
       'web design',
       'web development', 
@@ -15,8 +15,8 @@ export const seoConfig = {
       'UI/UX design',
       'React development',
       'SvelteKit',
-      'SEO optimization',
-      'conversion optimization',
+      'SEO optimisation',
+      'conversion optimisation',
       'full-stack developer',
       'graphic design',
       'print design',
@@ -48,7 +48,7 @@ export const seoConfig = {
         'React development',
         'SvelteKit development',
         'SEO services',
-        'conversion optimization',
+        'conversion optimisation',
         'full-stack developer',
         'graphic design services',
         'print design',
@@ -69,7 +69,7 @@ export const seoConfig = {
       "name": "Seemus",
       "url": "https://seemus.co.uk",
       "logo": "https://seemus.co.uk/logo.png",
-      "description": "Full-stack designer and developer specializing in web design, development, digital marketing, and custom apparel printing.",
+      "description": "Full-stack designer and developer specialising in web design, development, digital marketing, and custom apparel printing.",
       "foundingDate": "1999",
       "founder": {
         "@type": "Person",
@@ -150,7 +150,7 @@ export const seoConfig = {
             "itemOffered": {
               "@type": "Service",
               "name": "Web Development",
-              "description": "Full-stack development, React & SvelteKit, API integration, and performance optimization"
+              "description": "Full-stack development, React & SvelteKit, API integration, and performance optimisation"
             }
           },
           {
@@ -158,7 +158,7 @@ export const seoConfig = {
             "itemOffered": {
               "@type": "Service", 
               "name": "Digital Marketing",
-              "description": "SEO optimization, content strategy, analytics & tracking, and conversion optimization"
+              "description": "SEO optimisation, content strategy, analytics & tracking, and conversion optimisation"
             }
           },
           {
