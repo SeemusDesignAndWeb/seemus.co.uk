@@ -5,7 +5,7 @@
       "quote": "Excellent and prompt service when I needed it. Fast turn-around at a very reasonable rate for the product provided. Lots of contact to make sure everything went to plan. Great service I would highly recommend.",
       "name": "Sonny Angel",
       "title": "Sonny's Landscape Group Ltd",
-      "initials": "SJ",
+      "initials": "SL",
       "rating": 5,
       "gradient": "from-primary to-secondary"
     },
@@ -14,7 +14,7 @@
       "quote": "Great service, material and quality printing, all our staff love the softness of the polo and looks really nice. We also have some other branded items and they look great. Highly recommend it!",
       "name": "Milena Cruz",
       "title": "El Recreo - Spanish School",
-      "initials": "MC",
+      "initials": "ER",
       "rating": 5,
       "gradient": "from-secondary to-primary"
     },
@@ -23,7 +23,7 @@
       "quote": "I have worked with John for almost 18 years, during which he typeset and published every issue of Criminal Law Week without fail. He built and continues to maintain our website, refreshed it multiple times in different languages, and ensured it worked seamlessly across devices.",
       "name": "Deborah Colbran-Espada",
       "title": "Thomson Reuters",
-      "initials": "DC",
+      "initials": "TR",
       "rating": 5,
       "gradient": "from-primary to-secondary"
     },
@@ -34,7 +34,17 @@
         "title": "River Church",
         "initials": "RC",
         "rating": 5,
-        "gradient": "from-primary to-secondary"
-      }
+        "gradient": "from-secondary to-primary"
+      },
+      {
+          "id": 5,
+          "quote": "John’s marketing content and campaign design were outstanding. The strategy was clear, creative, and perfectly executed, bringing strong engagement and real results. His ability to blend design with messaging made the campaign stand out. Highly recommended.",
+          "name": "Kimberley Godley",
+          "title": "PICCASO",
+          "initials": "PI",
+          "rating": 5,
+          "gradient": "from-primary to-secondary"
+        }
+      
   ]
 }

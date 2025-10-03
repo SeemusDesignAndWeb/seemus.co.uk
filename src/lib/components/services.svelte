@@ -16,8 +16,8 @@
         <!-- Service imagery -->
         <div class="mb-4 rounded-lg overflow-hidden h-32">
           <img 
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0" 
-            alt="Brand identity design with logos, business cards, and branding materials"
+            src="/images/pclwebsite.png" 
+            alt="Modern website design showcasing clean UI/UX and professional branding"
             class="w-full h-full object-cover"
           />
         </div>
@@ -63,8 +63,8 @@
         <!-- Service imagery -->
         <div class="mb-4 rounded-lg overflow-hidden h-32">
           <img 
-            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0" 
-            alt="Person using a modern website on laptop for business"
+            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0" 
+            alt="Developer coding on laptop with code editor and programming languages visible on screen"
             class="w-full h-full object-cover"
           />
         </div>
@@ -149,8 +149,8 @@
 
       <!-- Added Clothing Printing & Design service -->
       <div class="p-8 rounded-xl border border-border hover:border-primary transition-all bg-card hover:shadow-lg group">
-        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-all">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:scale-110 transition-all">
+          <svg class="w-6 h-6 text-secondary group-hover:text-secondary-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
           </svg>
         </div>
