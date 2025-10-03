@@ -1,9 +1,9 @@
 import { json } from '@sveltejs/kit';
-import sgMail from '@sendgrid/mail';
+import { Resend } from 'resend';
 import { env } from '$env/dynamic/private';
 
-// Initialize SendGrid with API key from environment variables
-sgMail.setApiKey(env.SENDGRID_API_KEY);
+// Initialize Resend with API key from environment variables
+const resend = new Resend(env.RESEND_API_KEY);
 
 export async function POST({ request }) {
   try {
@@ -26,11 +26,11 @@ export async function POST({ request }) {
       );
     }
 
-    // Create email message
-    const msg = {
-      to: env.CONTACT_EMAIL || 'hello@seemus.co.uk', // Your email address
-      from: env.SENDGRID_FROM_EMAIL || 'noreply@seemus.co.uk', // Verified sender email
-      replyTo: email, // Allow replies to go to the sender
+    // Create email message for the site owner
+    const { data, error } = await resend.emails.send({
+      from: env.RESEND_FROM_EMAIL || 'Seemus <noreply@seemus.co.uk>',
+      to: [env.CONTACT_EMAIL || 'hello@seemus.co.uk'],
+      replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       text: `
 New contact form submission from your website:
@@ -63,15 +63,20 @@ This message was sent from the contact form on seemus.co.uk
           </div>
         </div>
       `
-    };
+    });
 
-    // Send email
-    await sgMail.send(msg);
+    if (error) {
+      console.error('Resend error:', error);
+      return json(
+        { error: 'Failed to send email. Please try again later.' },
+        { status: 500 }
+      );
+    }
 
-    // Send confirmation email to the sender (optional)
-    const confirmationMsg = {
-      to: email,
-      from: env.SENDGRID_FROM_EMAIL || 'johnwatson@seemus.co.uk',
+    // Send confirmation email to the sender
+    const { data: confirmationData, error: confirmationError } = await resend.emails.send({
+      from: env.RESEND_FROM_EMAIL || 'Seemus <noreply@seemus.co.uk>',
+      to: [email],
       subject: 'Thank you for contacting Seemus',
       text: `
 Hi ${name},
@@ -113,10 +118,12 @@ https://seemus.co.uk
           </div>
         </div>
       `
-    };
+    });
 
-    // Send confirmation email
-    await sgMail.send(confirmationMsg);
+    if (confirmationError) {
+      console.error('Resend confirmation error:', confirmationError);
+      // Don't fail the whole request if confirmation fails
+    }
 
     return json(
       { 
@@ -127,20 +134,8 @@ https://seemus.co.uk
     );
 
   } catch (error) {
-    console.error('SendGrid error:', error);
+    console.error('Email sending error:', error);
     
-    // Handle specific SendGrid errors
-    if (error.response) {
-      console.error('SendGrid response error:', error.response.body);
-      return json(
-        { 
-          error: 'Failed to send email. Please try again later.',
-          details: env.NODE_ENV === 'development' ? error.response.body : undefined
-        },
-        { status: 500 }
-      );
-    }
-
     return json(
       { 
         error: 'Internal server error. Please try again later.',
