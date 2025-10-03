@@ -1,21 +1,6 @@
 <section id="hero" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 relative overflow-hidden">
   <!-- Animated CSS gradient background -->
-  <div class="absolute inset-0 -z-20" style="
-    background: linear-gradient(-45deg, 
-      rgba(46, 138, 169, 0.4), 
-      rgba(190, 105, 40, 0.35), 
-      rgba(46, 138, 169, 0.3), 
-      rgba(190, 105, 40, 0.25),
-      rgba(46, 138, 169, 0.35),
-      rgba(190, 105, 40, 0.4),
-      rgba(46, 138, 169, 0.32),
-      rgba(190, 105, 40, 0.28),
-      rgba(46, 138, 169, 0.38),
-      rgba(190, 105, 40, 0.33)
-    );
-    background-size: 600% 600%;
-    animation: gradientShift 8s ease-in-out infinite;
-  "></div>
+  <div class="absolute inset-0 -z-20 gradient-bg"></div>
   
   <!-- Subtle overlay for better text readability -->
   <div class="absolute inset-0 bg-white/2 -z-10"></div>
@@ -59,12 +44,29 @@
 </section>
 
 <style>
+  .gradient-bg {
+    background: linear-gradient(-45deg, 
+      rgba(46, 138, 169, 0.4), 
+      rgba(190, 105, 40, 0.35), 
+      rgba(46, 138, 169, 0.3), 
+      rgba(190, 105, 40, 0.25),
+      rgba(46, 138, 169, 0.35),
+      rgba(190, 105, 40, 0.4),
+      rgba(46, 138, 169, 0.32),
+      rgba(190, 105, 40, 0.28),
+      rgba(46, 138, 169, 0.38),
+      rgba(190, 105, 40, 0.33)
+    );
+    background-size: 800% 800%;
+    animation: gradientShift 30s ease-in-out infinite;
+  }
+
   @keyframes gradientShift {
     0% {
-      background-position: 0% 0%;
+      background-position: 0% 50%;
     }
     25% {
-      background-position: 100% 0%;
+      background-position: 100% 50%;
     }
     50% {
       background-position: 100% 100%;
@@ -73,7 +75,7 @@
       background-position: 0% 100%;
     }
     100% {
-      background-position: 0% 0%;
+      background-position: 0% 50%;
     }
   }
 </style>
