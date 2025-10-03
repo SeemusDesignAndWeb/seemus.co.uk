@@ -6,6 +6,7 @@
   let autoScrollInterval;
   let isAutoScrolling = true;
   let isTransitioning = false;
+  let screenWidth = 1024; // Default to desktop size
   
   // Helper function to generate initials from name
   function generateInitials(name) {
@@ -39,21 +40,28 @@
   function getAllTestimonials() {
     return testimonialsData.testimonials;
   }
+
+  // Get the number of visible cards based on screen size
+  function getVisibleCardsCount() {
+    if (screenWidth < 640) return 1; // Mobile: 1 card
+    if (screenWidth < 1024) return 2; // Tablet: 2 cards
+    return 3; // Desktop: 3 cards
+  }
   
   // Navigation functions with smooth transitions
   function nextTestimonial() {
     if (isTransitioning) return;
     isTransitioning = true;
-    currentIndex = currentIndex === 0 
-      ? testimonialsData.testimonials.length - 1 
-      : currentIndex - 1;
+    const maxIndex = testimonialsData.testimonials.length - getVisibleCardsCount();
+    currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
     setTimeout(() => isTransitioning = false, 500);
   }
-  
+
   function prevTestimonial() {
     if (isTransitioning) return;
     isTransitioning = true;
-    currentIndex = (currentIndex + 1) % testimonialsData.testimonials.length;
+    const maxIndex = testimonialsData.testimonials.length - getVisibleCardsCount();
+    currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
     setTimeout(() => isTransitioning = false, 500);
   }
   
@@ -85,7 +93,27 @@
   }
   
   onMount(() => {
+    // Set initial screen width
+    screenWidth = window.innerWidth;
+    
+    // Add resize listener
+    const handleResize = () => {
+      screenWidth = window.innerWidth;
+      // Reset current index if it's beyond the new maximum
+      const maxIndex = testimonialsData.testimonials.length - getVisibleCardsCount();
+      if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
     startAutoScroll();
+    
+    // Cleanup function
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   });
   
   onDestroy(() => {
@@ -131,10 +159,10 @@
       <div class="overflow-hidden">
         <div 
           class="flex transition-transform duration-500 ease-in-out"
-          style="transform: translateX(-{currentIndex * (100 / testimonialsData.testimonials.length)}%)"
+          style="transform: translateX(-{currentIndex * (100 / getVisibleCardsCount())}%)"
         >
           {#each getAllTestimonials() as testimonial, index}
-            <div class="w-1/3 flex-shrink-0 px-2 sm:px-4">
+            <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-4">
               <div class="p-6 sm:p-8 rounded-xl border border-border bg-card hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-full">
                 <div class="flex items-center gap-1 mb-4">
                   {#each Array(testimonial.rating) as _}
