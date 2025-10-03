@@ -159,7 +159,7 @@
         
         <div class="space-y-4">
           <a 
-            href="mailto:hello@seemus.co.uk" 
+            href="mailto:johnwatson@seemus.co.uk" 
             class="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

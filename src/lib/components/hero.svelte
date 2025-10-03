@@ -1,12 +1,24 @@
 <section id="hero" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 relative overflow-hidden">
-  <!-- Background image from Unsplash - lighter, minimal design -->
-  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat -z-20" style="background-image: url('https://images.unsplash.com/photo-1708724195876-1156245fce21?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+  <!-- Animated CSS gradient background -->
+  <div class="absolute inset-0 -z-20" style="
+    background: linear-gradient(-45deg, 
+      rgba(46, 138, 169, 0.4), 
+      rgba(190, 105, 40, 0.35), 
+      rgba(46, 138, 169, 0.3), 
+      rgba(190, 105, 40, 0.25),
+      rgba(46, 138, 169, 0.35),
+      rgba(190, 105, 40, 0.4),
+      rgba(46, 138, 169, 0.32),
+      rgba(190, 105, 40, 0.28),
+      rgba(46, 138, 169, 0.38),
+      rgba(190, 105, 40, 0.33)
+    );
+    background-size: 600% 600%;
+    animation: gradientShift 8s ease-in-out infinite;
+  "></div>
   
-  <!-- Light overlay to blend with brand colors -->
-  <div class="absolute inset-0 bg-white/20 -z-10"></div>
-  
-  <!-- Added colourful background gradient -->
-  <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 -z-10"></div>
+  <!-- Subtle overlay for better text readability -->
+  <div class="absolute inset-0 bg-white/2 -z-10"></div>
   
   <!-- Added decorative elements using CSS gradients -->
   <div class="absolute top-20 right-10 w-64 h-64 opacity-10 -z-10 hidden lg:block">
@@ -45,3 +57,23 @@
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 0%;
+    }
+    25% {
+      background-position: 100% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    75% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+</style>
