@@ -1,8 +1,8 @@
 <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">Professional Digital and Print Services</h2>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">Professional Digital, Marketing & Print Services</h2>
     <p class="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
-      Comprehensive digital and print solutions tailored to your business needs
+      Comprehensive solutions tailored to your business needs
     </p>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -150,8 +150,16 @@
       <!-- Added Clothing Printing & Design service -->
       <div class="p-8 rounded-xl border border-border hover:border-primary transition-all bg-card hover:shadow-lg group">
         <div class="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:scale-110 transition-all">
-          <svg class="w-6 h-6 text-secondary group-hover:text-secondary-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          <svg class="w-6 h-6 text-secondary group-hover:text-secondary-foreground transition-colors" fill="currentColor" viewBox="0 0 58.084 58.084">
+            <path d="M43.596,55.054h-30.88c-1.291,0-2.337-1.047-2.337-2.337v-27.25
+              c-0.705,0.104-1.445-0.119-1.987-0.661L0.685,17.1c-0.913-0.913-0.913-2.393,0-3.305L10.763,3.716
+              c0.438-0.438,1.032-0.685,1.652-0.685h7.706c1.291,0,2.337,1.047,2.337,2.337v1.109c0.698,1.634,2.319,2.948,4.343,3.512h4.484
+              c2.024-0.563,3.646-1.878,4.343-3.512V5.368c0-1.29,1.046-2.337,2.337-2.337h7.706c0.62,0,1.214,0.246,1.652,0.685L57.4,13.795
+              c0.913,0.912,0.913,2.392,0,3.305l-7.707,7.706c-0.913,0.913-2.392,0.913-3.305,0l-0.455-0.454v28.366
+              C45.934,54.008,44.887,55.054,43.596,55.054z M15.052,50.381h26.207V18.709c0-0.945,0.569-1.797,1.442-2.159
+              c0.874-0.362,1.88-0.161,2.547,0.507l2.792,2.792l4.402-4.401l-7.741-7.742H40.16c-1.174,3.379-4.171,5.954-8.026,6.892
+              c-0.18,0.044-0.366,0.066-0.552,0.066h-5.081c-0.187,0-0.372-0.022-0.552-0.066c-3.855-0.938-6.852-3.513-8.026-6.892h-4.54
+              l-7.741,7.742l4.402,4.401l1.02-1.02c0.667-0.668,1.673-0.87,2.547-0.507c0.874,0.362,1.442,1.215,1.442,2.159v29.9H15.052z"/>
           </svg>
         </div>
         <!-- Service imagery -->
