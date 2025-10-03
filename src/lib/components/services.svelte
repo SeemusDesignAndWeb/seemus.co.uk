@@ -13,13 +13,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
           </svg>
         </div>
-        <!-- Added service imagery -->
+        <!-- Service imagery -->
         <div class="mb-4 rounded-lg overflow-hidden h-32">
-          <div class="w-full h-full bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-            <svg class="w-12 h-12 text-primary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-            </svg>
-          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0" 
+            alt="Brand identity design with logos, business cards, and branding materials"
+            class="w-full h-full object-cover"
+          />
         </div>
         <h3 class="text-xl font-semibold mb-3">Design</h3>
         <p class="text-muted-foreground mb-4 leading-relaxed">
@@ -60,13 +60,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
           </svg>
         </div>
-        <!-- Added service imagery -->
+        <!-- Service imagery -->
         <div class="mb-4 rounded-lg overflow-hidden h-32">
-          <div class="w-full h-full bg-gradient-to-br from-secondary/10 to-secondary/5 flex items-center justify-center">
-            <svg class="w-12 h-12 text-secondary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0" 
+            alt="Person using a modern website on laptop for business"
+            class="w-full h-full object-cover"
+          />
         </div>
         <h3 class="text-xl font-semibold mb-3">Development</h3>
         <p class="text-muted-foreground mb-4 leading-relaxed">
@@ -107,13 +107,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
           </svg>
         </div>
-        <!-- Added service imagery -->
+        <!-- Service imagery -->
         <div class="mb-4 rounded-lg overflow-hidden h-32">
-          <div class="w-full h-full bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center">
-            <svg class="w-12 h-12 text-accent/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-            </svg>
-          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0" 
+            alt="Digital marketing analytics dashboard with charts and data visualization"
+            class="w-full h-full object-cover"
+          />
         </div>
         <h3 class="text-xl font-semibold mb-3">Marketing</h3>
         <p class="text-muted-foreground mb-4 leading-relaxed">
@@ -154,12 +154,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
           </svg>
         </div>
+        <!-- Service imagery -->
         <div class="mb-4 rounded-lg overflow-hidden h-32">
-          <div class="w-full h-full bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-            <svg class="w-12 h-12 text-primary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>
-          </div>
+          <img 
+            src="https://thecreativeclothing.co.uk/img/gallery/gallery_1.png" 
+            alt="Custom t-shirt printing and screen printing equipment"
+            class="w-full h-full object-cover"
+          />
         </div>
         <h3 class="text-xl font-semibold mb-3">Clothing Printing</h3>
         <p class="text-muted-foreground mb-4 leading-relaxed">
