@@ -57,7 +57,7 @@
   
   <!-- Mobile Menu -->
   {#if isMenuOpen}
-    <div class="md:hidden border-t border-border bg-background">
+    <div class="md:hidden border-t border-border bg-background/80 backdrop-blur-md">
       <div class="px-4 py-4 space-y-3">
         <button 
           onclick={() => scrollToSection('about')} 
