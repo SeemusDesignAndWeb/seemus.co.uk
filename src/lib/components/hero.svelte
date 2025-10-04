@@ -18,7 +18,7 @@
       <p class="text-sm text-foreground/80 mb-4 tracking-wide uppercase">
         Design • Development • Marketing • Print
       </p>
-      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance leading-tight text-foreground">
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance text-foreground" style="line-height: 1.05;">
         Crafting Digital Experiences That <span class="text-primary">Convert</span>
       </h1>
       <p class="text-lg sm:text-xl text-foreground/90 max-w-2xl mx-auto text-balance leading-relaxed">
@@ -26,16 +26,16 @@
       </p>
     </div>
     
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
+    <div class="flex flex-row gap-4 justify-center items-center mt-12">
       <a 
         href="#services" 
-        class="inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity font-medium"
+        class="inline-flex items-center justify-center px-4 sm:px-8 py-2 sm:py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity font-medium"
       >
         Explore Services
       </a>
       <a 
         href="#contact" 
-        class="inline-flex items-center justify-center px-8 py-3 bg-secondary text-secondary-foreground rounded-lg hover:opacity-90 transition-opacity font-medium"
+        class="inline-flex items-center justify-center px-4 sm:px-8 py-2 sm:py-3 bg-secondary text-secondary-foreground rounded-lg hover:opacity-90 transition-opacity font-medium"
       >
         Get In Touch
       </a>

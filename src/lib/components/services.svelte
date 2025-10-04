@@ -1,6 +1,6 @@
 <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center leading-tight sm:leading-normal">Professional Digital, Marketing & Print Services</h2>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center" style="line-height: 1.1;">Professional Digital, Marketing & Print Services</h2>
     <p class="text-center text-muted-foreground mb-8 sm:mb-16 max-w-2xl mx-auto">
       Comprehensive solutions tailored to your business needs
     </p>
