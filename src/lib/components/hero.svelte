@@ -1,4 +1,4 @@
-<section id="hero" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 relative overflow-hidden">
+<section id="hero" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden" style="min-height: 100vh; min-height: 100dvh;">
   <!-- Animated CSS gradient background -->
   <div class="absolute inset-0 -z-20 gradient-bg"></div>
   
