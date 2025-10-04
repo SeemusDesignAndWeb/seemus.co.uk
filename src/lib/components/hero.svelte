@@ -19,7 +19,7 @@
         Design • Development • Marketing • Print
       </p>
       <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance text-foreground" style="line-height: 1.05;">
-        Crafting Digital Experiences That <span class="text-primary">Convert</span>
+        Crafting digital experiences that <span class="text-primary">convert</span>
       </h1>
       <p class="text-lg sm:text-xl text-foreground/90 max-w-2xl mx-auto text-balance leading-relaxed">
         Full-stack designer and developer specialising in creating beautiful, functional websites, digital marketing, brand identity and custom apparel that drive results for your business.
