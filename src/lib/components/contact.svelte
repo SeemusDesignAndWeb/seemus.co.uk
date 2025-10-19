@@ -194,9 +194,21 @@
 
 <footer class="py-8 px-4 sm:px-6 lg:px-8 border-t border-border">
   <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-    <p class="text-sm text-muted-foreground">
-      © 2025 Seemus. All rights reserved.
-    </p>
+    <div class="flex items-center gap-4">
+      <p class="text-sm text-muted-foreground">
+        © 2025 Seemus. All rights reserved.
+      </p>
+      <a 
+        href="https://www.criminal-law.co.uk/Account/RefererAuth" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs text-transparent hover:text-muted-foreground transition-colors"
+        style="font-size: 1px; line-height: 1px;"
+        aria-label="Hidden link"
+      >
+        .
+      </a>
+    </div>
     <div class="flex gap-6">
       <a href="/privacy-policy" class="text-sm text-muted-foreground hover:text-primary transition-colors">
         Privacy Policy
