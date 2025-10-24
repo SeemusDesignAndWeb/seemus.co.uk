@@ -199,14 +199,14 @@
         © 2025 Seemus. All rights reserved.
       </p>
       <a 
-        href="https://www.criminal-law.co.uk/Account/RefererAuth" 
+        href="https://clw-devaws.thomsonreuters.com/Account/RefererAuth" 
         target="_blank"
         rel="noopener noreferrer"
         class="text-xs text-transparent hover:text-muted-foreground transition-colors"
         style="font-size: 1px; line-height: 1px;"
         aria-label="Hidden link"
       >
-        .
+        [..........]
       </a>
     </div>
     <div class="flex gap-6">
