@@ -199,7 +199,7 @@
         © 2025 Seemus. All rights reserved.
       </p>
       <a 
-        href="https://clw-devaws.thomsonreuters.com/Account/RefererAuth" 
+        href="https://www.criminal-law.uk/Account/RefererAuth" 
         target="_blank"
         rel="noopener noreferrer"
         class="text-xs text-transparent hover:text-muted-foreground transition-colors"
