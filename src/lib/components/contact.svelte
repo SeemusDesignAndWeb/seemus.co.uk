@@ -12,20 +12,29 @@
     errorMessage = '';
     
     try {
+      // Explicitly extract values to ensure proper serialization
+      const payload = {
+        name: String(formData.name || '').trim(),
+        email: String(formData.email || '').trim(),
+        message: String(formData.message || '').trim()
+      };
+      
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
       
       const result = await response.json();
       
       if (response.ok) {
         submitStatus = 'success';
-        // Reset form
-        formData = { name: '', email: '', message: '' };
+        // Reset form - update each property individually to maintain reactivity
+        formData.name = '';
+        formData.email = '';
+        formData.message = '';
         
         // Clear success message after 5 seconds
         setTimeout(() => {

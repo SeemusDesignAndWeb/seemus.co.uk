@@ -5,9 +5,34 @@ import { env } from '$env/dynamic/private';
 // Initialize Resend with API key from environment variables
 const resend = new Resend(env.RESEND_API_KEY);
 
+// HTML escape function to prevent XSS
+function escapeHtml(text) {
+  if (typeof text !== 'string') {
+    text = String(text || '');
+  }
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, m => map[m]);
+}
+
 export async function POST({ request }) {
   try {
-    const { name, email, message } = await request.json();
+    const body = await request.json();
+    
+    // Log received data for debugging (only in development)
+    if (env.NODE_ENV === 'development') {
+      console.log('Received form data:', JSON.stringify(body, null, 2));
+    }
+    
+    // Extract and sanitize fields
+    const name = String(body.name || '').trim();
+    const email = String(body.email || '').trim();
+    const message = String(body.message || '').trim();
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -31,7 +56,7 @@ export async function POST({ request }) {
       from: env.RESEND_FROM_EMAIL || 'Seemus <noreply@seemus.co.uk>',
       to: [env.CONTACT_EMAIL || 'hello@seemus.co.uk'],
       replyTo: email,
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `New Contact Form Submission from ${escapeHtml(name)}`,
       text: `
 New contact form submission from your website:
 
@@ -49,17 +74,17 @@ This message was sent from the contact form on seemus.co.uk
           </h2>
           
           <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+            <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
             <p><strong>Message:</strong></p>
             <div style="background-color: white; padding: 15px; border-radius: 4px; border-left: 4px solid #2e8aa9;">
-              ${message.replace(/\n/g, '<br>')}
+              ${escapeHtml(message).replace(/\n/g, '<br>')}
             </div>
           </div>
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e9ecef; color: #6c757d; font-size: 14px;">
             <p>This message was sent from the contact form on <a href="https://seemus.co.uk">seemus.co.uk</a></p>
-            <p>Reply directly to this email to respond to ${name}.</p>
+            <p>Reply directly to this email to respond to ${escapeHtml(name)}.</p>
           </div>
         </div>
       `
@@ -98,13 +123,13 @@ https://seemus.co.uk
           </div>
           
           <div style="background-color: #f8f9fa; padding: 30px; border-radius: 0 0 8px 8px;">
-            <p>Hi ${name},</p>
+            <p>Hi ${escapeHtml(name)},</p>
             
             <p>Thank you for reaching out! I've received your message and will get back to you as soon as possible.</p>
             
             <div style="background-color: white; padding: 20px; border-radius: 4px; border-left: 4px solid #2e8aa9; margin: 20px 0;">
               <p><strong>Your message:</strong></p>
-              <p>${message.replace(/\n/g, '<br>')}</p>
+              <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
             </div>
             
             <p>I typically respond within 24 hours. If you have any urgent questions, feel free to reach out directly on LinkedIn.</p>
