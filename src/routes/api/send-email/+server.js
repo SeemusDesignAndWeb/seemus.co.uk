@@ -20,24 +20,184 @@ function escapeHtml(text) {
   return text.replace(/[&<>"']/g, m => map[m]);
 }
 
+// In-memory rate limiting store (in production, use Redis or a database)
+const rateLimitStore = new Map();
+
+// Clean up old entries every 10 minutes
+setInterval(() => {
+  const now = Date.now();
+  const oneHourAgo = now - 60 * 60 * 1000;
+  for (const [key, data] of rateLimitStore.entries()) {
+    if (data.lastSubmission < oneHourAgo) {
+      rateLimitStore.delete(key);
+    }
+  }
+}, 10 * 60 * 1000);
+
+// Spam patterns to detect
+const spamPatterns = [
+  /\b(viagra|cialis|casino|poker|loan|mortgage|debt|free money|make money|get rich|click here|buy now|limited time)\b/gi,
+  /(https?:\/\/){2,}/gi, // Multiple URLs
+  /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g // Multiple email addresses
+];
+
+// Known spam email domains (common disposable email domains)
+const spamDomains = [
+  'tempmail.com',
+  'guerrillamail.com',
+  'mailinator.com',
+  '10minutemail.com',
+  'throwaway.email',
+  'temp-mail.org'
+];
+
+// Get client IP address
+function getClientIP(request) {
+  const forwarded = request.headers.get('x-forwarded-for');
+  const realIP = request.headers.get('x-real-ip');
+  return forwarded?.split(',')[0]?.trim() || realIP || 'unknown';
+}
+
+// Check for spam content
+function checkSpamContent(text) {
+  if (!text) return false;
+  
+  const lowerText = text.toLowerCase();
+  
+  // Check for spam patterns
+  for (const pattern of spamPatterns) {
+    if (pattern.test(text)) {
+      return true;
+    }
+  }
+  
+  // Check for excessive links (more than 3 URLs)
+  const urlMatches = text.match(/https?:\/\/[^\s]+/gi);
+  if (urlMatches && urlMatches.length > 3) {
+    return true;
+  }
+  
+  // Check for excessive email addresses (more than 2)
+  const emailMatches = text.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g);
+  if (emailMatches && emailMatches.length > 2) {
+    return true;
+  }
+  
+  // Check for all caps (more than 50% of message)
+  const capsMatches = text.match(/[A-Z]/g);
+  const totalLetters = text.match(/[A-Za-z]/g);
+  if (capsMatches && totalLetters && capsMatches.length / totalLetters.length > 0.5 && text.length > 20) {
+    return true;
+  }
+  
+  return false;
+}
+
+// Rate limiting check
+function checkRateLimit(ip, email) {
+  const now = Date.now();
+  const ipKey = `ip:${ip}`;
+  const emailKey = `email:${email.toLowerCase()}`;
+  
+  // Check IP rate limit (max 3 submissions per hour)
+  const ipData = rateLimitStore.get(ipKey);
+  if (ipData) {
+    const timeSinceLastSubmission = now - ipData.lastSubmission;
+    if (timeSinceLastSubmission < 60 * 60 * 1000) { // 1 hour
+      if (ipData.count >= 3) {
+        return { allowed: false, reason: 'Too many submissions from this IP. Please try again later.' };
+      }
+      ipData.count++;
+      ipData.lastSubmission = now;
+    } else {
+      rateLimitStore.set(ipKey, { count: 1, lastSubmission: now });
+    }
+  } else {
+    rateLimitStore.set(ipKey, { count: 1, lastSubmission: now });
+  }
+  
+  // Check email rate limit (max 2 submissions per hour)
+  const emailData = rateLimitStore.get(emailKey);
+  if (emailData) {
+    const timeSinceLastSubmission = now - emailData.lastSubmission;
+    if (timeSinceLastSubmission < 60 * 60 * 1000) { // 1 hour
+      if (emailData.count >= 2) {
+        return { allowed: false, reason: 'Too many submissions from this email. Please try again later.' };
+      }
+      emailData.count++;
+      emailData.lastSubmission = now;
+    } else {
+      rateLimitStore.set(emailKey, { count: 1, lastSubmission: now });
+    }
+  } else {
+    rateLimitStore.set(emailKey, { count: 1, lastSubmission: now });
+  }
+  
+  return { allowed: true };
+}
+
 export async function POST({ request }) {
   try {
     const body = await request.json();
+    const clientIP = getClientIP(request);
     
     // Log received data for debugging (only in development)
     if (env.NODE_ENV === 'development') {
       console.log('Received form data:', JSON.stringify(body, null, 2));
+      console.log('Client IP:', clientIP);
     }
     
     // Extract and sanitize fields
     const name = String(body.name || '').trim();
     const email = String(body.email || '').trim();
     const message = String(body.message || '').trim();
+    const honeypot = String(body.honeypot || '').trim();
+    const timeSpent = parseInt(body.timeSpent) || 0;
+
+    // SPAM CHECK 1: Honeypot field should be empty
+    if (honeypot) {
+      console.warn('Spam detected: Honeypot field filled', { clientIP, email });
+      return json(
+        { error: 'Invalid submission. Please try again.' },
+        { status: 400 }
+      );
+    }
+
+    // SPAM CHECK 2: Form submitted too quickly (less than 3 seconds = likely bot)
+    if (timeSpent < 3000) {
+      console.warn('Spam detected: Form submitted too quickly', { clientIP, email, timeSpent });
+      return json(
+        { error: 'Please take your time filling out the form.' },
+        { status: 400 }
+      );
+    }
 
     // Validate required fields
     if (!name || !email || !message) {
       return json(
         { error: 'Missing required fields: name, email, and message are required' },
+        { status: 400 }
+      );
+    }
+
+    // Validate field lengths
+    if (name.length > 100) {
+      return json(
+        { error: 'Name is too long. Please keep it under 100 characters.' },
+        { status: 400 }
+      );
+    }
+    
+    if (message.length < 10) {
+      return json(
+        { error: 'Message is too short. Please provide more details.' },
+        { status: 400 }
+      );
+    }
+    
+    if (message.length > 5000) {
+      return json(
+        { error: 'Message is too long. Please keep it under 5000 characters.' },
         { status: 400 }
       );
     }
@@ -48,6 +208,35 @@ export async function POST({ request }) {
       return json(
         { error: 'Invalid email format' },
         { status: 400 }
+      );
+    }
+
+    // SPAM CHECK 3: Check for spam email domains
+    const emailDomain = email.split('@')[1]?.toLowerCase();
+    if (emailDomain && spamDomains.includes(emailDomain)) {
+      console.warn('Spam detected: Known spam email domain', { clientIP, email });
+      return json(
+        { error: 'Invalid email address. Please use a valid email.' },
+        { status: 400 }
+      );
+    }
+
+    // SPAM CHECK 4: Check for spam content in name, message
+    if (checkSpamContent(name) || checkSpamContent(message)) {
+      console.warn('Spam detected: Spam content detected', { clientIP, email });
+      return json(
+        { error: 'Your message contains content that appears to be spam. Please revise and try again.' },
+        { status: 400 }
+      );
+    }
+
+    // SPAM CHECK 5: Rate limiting
+    const rateLimitCheck = checkRateLimit(clientIP, email);
+    if (!rateLimitCheck.allowed) {
+      console.warn('Spam detected: Rate limit exceeded', { clientIP, email });
+      return json(
+        { error: rateLimitCheck.reason },
+        { status: 429 } // Too Many Requests
       );
     }
 

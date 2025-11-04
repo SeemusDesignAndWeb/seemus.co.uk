@@ -1,9 +1,14 @@
 <script>
   let formData = $state({ name: '', email: '', message: '' });
+  let honeypot = $state(''); // Honeypot field - should remain empty
+  let formStartTime = $state(Date.now()); // Track when form was loaded
   
   let isSubmitting = $state(false);
   let submitStatus = $state('');
   let errorMessage = $state('');
+  
+  // Initialize form start time when component loads
+  formStartTime = Date.now();
   
   async function handleSubmit(e) {
     e.preventDefault();
@@ -12,11 +17,16 @@
     errorMessage = '';
     
     try {
+      // Calculate time spent on form (humans take time, bots submit instantly)
+      const timeSpent = Date.now() - formStartTime;
+      
       // Explicitly extract values to ensure proper serialization
       const payload = {
         name: String(formData.name || '').trim(),
         email: String(formData.email || '').trim(),
-        message: String(formData.message || '').trim()
+        message: String(formData.message || '').trim(),
+        honeypot: String(honeypot || '').trim(), // Honeypot field
+        timeSpent: timeSpent // Time spent filling form
       };
       
       const response = await fetch('/api/send-email', {
@@ -35,6 +45,8 @@
         formData.name = '';
         formData.email = '';
         formData.message = '';
+        honeypot = '';
+        formStartTime = Date.now(); // Reset timer for next submission
         
         // Clear success message after 5 seconds
         setTimeout(() => {
@@ -111,6 +123,19 @@
               class="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring resize-none"
               placeholder="Tell me about your project..."
             ></textarea>
+          </div>
+          
+          <!-- Honeypot field - hidden from users but bots will fill it -->
+          <div style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">
+            <label for="website">Website</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
+              bind:value={honeypot}
+            />
           </div>
           
           <button
