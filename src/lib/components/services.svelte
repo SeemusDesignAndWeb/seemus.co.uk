@@ -165,8 +165,8 @@
         <!-- Service imagery -->
         <div class="mb-4 rounded-lg overflow-hidden h-32">
           <img 
-            src="https://thecreativeclothing.co.uk/img/gallery/gallery_1.png" 
-            alt="Custom t-shirt printing and screen printing equipment"
+            src="/images/LifeGuardHoodie.png"
+            alt="Custom hoodie printing and clothing design services"
             class="w-full h-full object-cover"
           />
         </div>
