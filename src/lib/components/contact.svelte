@@ -230,7 +230,7 @@
   <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
     <div class="flex items-center gap-4">
       <p class="text-sm text-muted-foreground">
-        © 2025 Seemus. All rights reserved.
+        © 2026 The Media Lounge Ltd. All rights reserved.
       </p>
       <a 
         href="https://www.criminal-law.uk/Account/RefererAuth" 
