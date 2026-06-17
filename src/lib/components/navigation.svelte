@@ -38,6 +38,9 @@
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-8">
         {#if isMediaLounge}
+          <a href="/media-lounge#onnuma" class="text-sm hover:text-primary transition-colors">
+            OnNuma
+          </a>
           <a href="https://seemus.co.uk" class="text-sm hover:text-primary transition-colors">
             Brand Services
           </a>
@@ -85,6 +88,9 @@
     <div class="md:hidden border-t border-border bg-background/80 backdrop-blur-md">
       <div class="px-4 py-4 space-y-3">
         {#if isMediaLounge}
+          <a href="/media-lounge#onnuma" class="block py-2 hover:text-primary transition-colors" onclick={() => isMenuOpen = false}>
+            OnNuma
+          </a>
           <a href="https://seemus.co.uk" class="block py-2 hover:text-primary transition-colors" onclick={() => isMenuOpen = false}>
             Brand Services
           </a>

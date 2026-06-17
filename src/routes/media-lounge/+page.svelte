@@ -229,8 +229,103 @@
     </div>
   </section>
 
+  <!-- ── FEATURED PRODUCT: ONNUMA ── -->
+  <section id="onnuma" class="py-24 px-4 sm:px-6 lg:px-8 scroll-mt-16">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-sm tracking-wide uppercase text-muted-foreground mb-3">
+        Built by the Media Lounge
+      </p>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">Meet OnNuma</h2>
+      <p class="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+        We don't just build for clients — we build our own products too. OnNuma is our
+        volunteer and organisation management platform, designed around the people who actually use it.
+      </p>
+
+      <div class="onnuma-card rounded-2xl overflow-hidden shadow-lg">
+        <div class="grid lg:grid-cols-2">
+          <!-- Left: pitch -->
+          <div class="p-8 sm:p-12 flex flex-col justify-center">
+            <img src="/images/onnuma/onnuma-logo.png" alt="OnNuma" class="h-8 w-auto self-start mb-6" />
+            <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-balance" style="line-height: 1.1;">
+              Save time, with people who actually sign up.
+            </h3>
+            <p class="text-muted-foreground leading-relaxed mb-8">
+              Organisation management software for churches, charities and volunteer-led teams.
+              No passwords, no learning curve — just a magic link, a simple view of what's coming up,
+              and one-tap sign-ups that cut last-minute gaps and no-shows.
+            </p>
+
+            <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-3 text-sm mb-10">
+              {#each [
+                'MyHub — volunteer portal, no login needed',
+                'YouthHub — a teen portal with guardian sign-off',
+                'Rotas, events &amp; meeting planner in one place',
+                'Magic-link sign-in by email or SMS',
+                'Automatic shift reminders &amp; calendar sync',
+                'DBS &amp; safeguarding built in'
+              ] as feature}
+                <li class="flex items-start gap-2 text-foreground/80">
+                  <svg class="w-5 h-5 onnuma-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {@html feature}
+                </li>
+              {/each}
+            </ul>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://www.onnuma.com"
+                target="_blank"
+                rel="noopener"
+                class="onnuma-btn inline-flex items-center justify-center gap-2 px-8 py-3 text-white rounded-lg hover:opacity-90 transition-opacity font-medium"
+              >
+                Visit OnNuma
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+              <span class="inline-flex items-center justify-center text-sm text-muted-foreground">
+                Free plan available · No credit card required
+              </span>
+            </div>
+          </div>
+
+          <!-- Right: highlight panel -->
+          <div class="onnuma-panel relative overflow-hidden p-8 sm:p-12 flex flex-col justify-center gap-8 text-white min-h-[20rem]">
+            <p class="text-lg sm:text-xl font-light leading-relaxed text-balance">
+              “I just want to put my name down and know it's done. With OnNuma it was easy,
+              and I can sign up with my husband in one go.”
+            </p>
+
+            <!-- Hub dashboard screenshot -->
+            <img
+              src="/images/onnuma/Dashboard.png"
+              alt="OnNuma hub dashboard"
+              class="w-full rounded-xl shadow-2xl ring-1 ring-white/10"
+              loading="lazy"
+            />
+
+            <div class="grid grid-cols-3 gap-4">
+              {#each [
+                { stat: 'Zero', label: 'passwords to remember' },
+                { stat: '1 tap', label: 'to sign up to a rota' },
+                { stat: '11–17', label: 'YouthHub age range' }
+              ] as item}
+                <div>
+                  <div class="text-2xl font-extrabold">{item.stat}</div>
+                  <div class="text-xs text-white/70 leading-snug mt-1">{item.label}</div>
+                </div>
+              {/each}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── CTA ── -->
-  <section class="py-24 px-4 sm:px-6 lg:px-8">
+  <section class="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl sm:text-4xl font-bold mb-4">Got an app idea?</h2>
       <p class="text-muted-foreground mb-10 max-w-xl mx-auto leading-relaxed">
@@ -286,5 +381,24 @@
     50%  { background-position: 100% 100%; }
     75%  { background-position: 0% 100%; }
     100% { background-position: 0% 50%; }
+  }
+
+  /* ── OnNuma brand accents ── */
+  .onnuma-card {
+    border: 1px solid rgba(99, 99, 162, 0.2);
+    background: var(--card, #fff);
+  }
+  .onnuma-accent {
+    color: #6363a2;
+  }
+  .onnuma-btn {
+    background-color: #6363a2;
+  }
+  .onnuma-panel {
+    background-image:
+      linear-gradient(105deg, rgba(10, 28, 54, 0.92) 0%, rgba(10, 28, 54, 0.8) 50%, rgba(10, 28, 54, 0.55) 100%),
+      url('/images/onnuma/hero-people.png');
+    background-size: cover;
+    background-position: center 30%;
   }
 </style>
