@@ -1,5 +1,6 @@
 <script>
   import Navigation from '$lib/components/navigation.svelte';
+  import CompanyInfo from '$lib/components/CompanyInfo.svelte';
 </script>
 
 <svelte:head>
@@ -151,6 +152,7 @@
         <a href="/terms-of-service" class="text-sm text-muted-foreground hover:text-primary transition-colors">Terms of Service</a>
       </div>
     </div>
+    <CompanyInfo />
   </footer>
 </div>
 

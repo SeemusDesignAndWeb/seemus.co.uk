@@ -1,4 +1,5 @@
 <script>
+  import CompanyInfo from '$lib/components/CompanyInfo.svelte';
   let formData = $state({ name: '', email: '', message: '' });
   let honeypot = $state(''); // Honeypot field - should remain empty
   let formStartTime = $state(Date.now()); // Track when form was loaded
@@ -252,4 +253,5 @@
       </a>
     </div>
   </div>
+  <CompanyInfo />
 </footer>
